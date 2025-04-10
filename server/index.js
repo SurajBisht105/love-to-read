@@ -22,6 +22,10 @@ app.use((req, res, next) => {
 // Parse JSON bodies
 app.use(express.json());
 
+app.get("/", (req, res) => {
+  res.status(200).json({ message: "Media Hub Backend is running" });
+});
+
 // Connect to MongoDB
 connectDB();
 
