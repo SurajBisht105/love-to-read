@@ -3,7 +3,7 @@ import axios from "axios";
 import WordPanel from "./WordPanel";
 import SentencePanel from "./SentencePanel";
 
-function Flipbook() {
+function FlipBook() {
   // pairIndex is set to the starting page of the pair (assume 1 or 3, etc.)
   const [pairIndex, setPairIndex] = useState(1);
   const [wordPage, setWordPage] = useState(null);
@@ -82,4 +82,4 @@ function Flipbook() {
   );
 }
 
-export default Flipbook;
+export default FlipBook;
