@@ -1,9 +1,9 @@
 import React from "react";
-import Flipbook from "../components/FlipBook";
+import FlipBook from "../components/FliBBook";
 function Home() {
   return (
     <div className="w-full max-w-5xl mx-auto">
-      <Flipbook />
+      <FlipBook />
     </div>
   );
 }
