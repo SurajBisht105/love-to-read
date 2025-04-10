@@ -25,8 +25,9 @@ app.use(express.json());
 // Connect to MongoDB
 connectDB();
 
-// Define your API routes
-app.use("/api/pages", pageRoutes);
+// Use API base URL from .env for routes:
+const apiBase = process.env.API_BASE_URL || "/api";
+app.use(`${apiBase}/pages`, require("./routes/pageRoutes"));
 
 // Start Server
 const PORT = process.env.PORT || 5000;
