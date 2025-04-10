@@ -6,14 +6,26 @@ const pageRoutes = require("./routes/pageRoutes");
 
 const app = express();
 
+// Enable CORS
+app.use(cors());
+
+// Set security headers, including x-content-type-options
+app.use((req, res, next) => {
+  res.setHeader("X-Content-Type-Options", "nosniff");
+  next();
+});
+
+// Optionally, use Helmet to set several secure headers at once.
+// const helmet = require("helmet");
+// app.use(helmet());
+
+// Parse JSON bodies
+app.use(express.json());
+
 // Connect to MongoDB
 connectDB();
 
-// Middleware
-app.use(cors());
-app.use(express.json());
-
-// Routes
+// Define your API routes
 app.use("/api/pages", pageRoutes);
 
 // Start Server
